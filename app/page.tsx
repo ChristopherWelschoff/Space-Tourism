@@ -1,14 +1,12 @@
-import Image from "next/image";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <>
-      <header>
-        <div>
-            <Image alt="space" height={1624} width={750} src={"/assets/home/background-home-mobile.jpg"} />
-        </div>
-      </header>
-      <main></main>
+      <Header />
+      <main>
+        <div className="lg:bg-[url(/assets/home/background-home-desktop.jpg)] md:bg-[url(/assets/home/background-home-tablet.jpg)] bg-[url(/assets/home/background-home-mobile.jpg)] fixed inset-0 bg-cover bg-center -z-10"></div>
+      </main>
     </>
   );
 }
