@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <header>
         <div>
-          <Image alt="space" height={1624} width={750} src={"/assets/home/background-home-mobile.jpg"} />
+            <Image alt="space" height={1624} width={750} src={"/assets/home/background-home-mobile.jpg"} />
         </div>
       </header>
       <main></main>
