@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  =========================================================
+  1. DESIGN TOKENS (aus dem Figma Design System)
+  =========================================================
+  Alles in "theme" erzeugt automatisch Tailwind-Klassen:
+  --color-blue-900  ->  bg-blue-900, text-blue-900, border-blue-900 ...
+  --font-heading  ->  font-heading
+*/
+
+@theme {
+  /* --- Farben --- */
+  --color-blue-900: #0b0d17; /* Hintergrund */
+  --color-blue-300: #d0d6f9; /* Fließtext, Akzente */
+  --color-white: #ffffff;
 }
 
+/*
+  "inline" ist hier wichtig: Die Schrift-Variablen kommen von next/font
+  (siehe layout.tsx) und werden erst zur Laufzeit gesetzt. Mit "inline"
+  setzt Tailwind die Referenz direkt in die Klasse ein, statt eine
+  eigene Variable mit demselben Namen anzulegen.
+*/
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --- Schriften --- */
+  --font-heading: var(--font-bellefair); /* Bellefair: große Überschriften */
+  --font-nav: var(--font-barlow-condensed); /* Barlow Condensed: Navigation, Labels */
+  --font-body: var(--font-barlow); /* Barlow: Fließtext */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  Spacing: Nichts zu tun!
+  Das Design nutzt 4px-Schritte (128, 96, 80 ... 4px) –
+  genau wie Tailwind standardmäßig (p-1 = 4px, p-32 = 128px).
+*/
+
+/*
+  =========================================================
+  2. TEXT-PRESETS (Text Preset 1–9 aus dem Style Guide)
+  =========================================================
+  Mit @utility baust du eigene Tailwind-Klassen.
+  Nutzung im JSX: <h1 className="text-preset-1">SPACE</h1>
+  Vorteil: Varianten funktionieren auch, z. B. md:text-preset-2
+
+  Größen in rem (1rem = 16px), damit die Schrift mit den
+  Browser-Einstellungen der Nutzer:innen mitskaliert (Accessibility).
+
+  HINWEIS: Die Zeilenhöhen bitte mit Figma abgleichen!
+*/
+
+/* Preset 1 – Bellefair 144px */
+@utility text-preset-1 {
+  font-family: var(--font-heading);
+  font-size: 9rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+/* Preset 2 – Bellefair 100px */
+@utility text-preset-2 {
+  font-family: var(--font-heading);
+  font-size: 6.25rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+/* Preset 3 – Bellefair 56px */
+@utility text-preset-3 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+/* Preset 4 – Bellefair 32px */
+@utility text-preset-4 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+/* Preset 5 – Barlow Condensed 28px, 4px Letter Spacing */
+@utility text-preset-5 {
+  font-family: var(--font-nav);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.25rem;
+}
+
+/* Preset 6 – Bellefair 28px */
+@utility text-preset-6 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+/* Preset 7 – Barlow Condensed 14px, 2px Letter Spacing */
+@utility text-preset-7 {
+  font-family: var(--font-nav);
+  font-size: 0.875rem;
+  line-height: 1.2;
+  letter-spacing: 0.125rem;
+}
+
+/* Preset 8 – Barlow Condensed 16px, 2px Letter Spacing */
+@utility text-preset-8 {
+  font-family: var(--font-nav);
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.125rem;
+}
+
+/* Preset 9 – Barlow 18px, 180% Zeilenhöhe */
+@utility text-preset-9 {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+/*
+  =========================================================
+  3. BASIS-STYLES
+  =========================================================
+  @layer base = Standard-Styles für HTML-Elemente.
+  @apply = Tailwind-Klassen in normalem CSS verwenden.
+*/
+@layer base {
+  body {
+    @apply bg-blue-900 font-body text-blue-300 antialiased;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
