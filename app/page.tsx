@@ -1,7 +1,14 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <main>
-      <h1 className="text-preset-1 text-white">SPACE</h1>
-    </main>
+    <>
+      <header>
+        <div>
+          <Image alt="space" height={1624} width={750} src={"/assets/home/background-home-mobile.jpg"} />
+        </div>
+      </header>
+      <main></main>
+    </>
   );
 }
