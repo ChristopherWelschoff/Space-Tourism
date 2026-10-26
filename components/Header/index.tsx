@@ -1,21 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
+import type { NavItem } from "@/types/NavItem";
 
-const navItems = [
+const navItems: NavItem[] = [
   {
     index: "00",
     label: "Home",
+    href: "/",
   },
   {
     index: "01",
     label: "Destination",
+    href: "/",
   },
   {
     index: "02",
     label: "Crew",
+    href: "/",
   },
   {
     index: "03",
     label: "Technology",
+    href: "/",
   },
 ];
 
@@ -49,12 +55,11 @@ export default function Header() {
         <ul className="flex flex-col gap-8 text-white text-preset-8 uppercase">
           {navItems.map((item) => {
             return (
-              <li
-                className="flex gap-3 items-center font-bold"
-                key={item.index}
-              >
-                {item.index}
-                <span className="font-normal">{item.label}</span>
+              <li key={item.index} className="font-bold">
+                <Link className="flex gap-3 items-center " href={item.href}>
+                  {item.index}
+                  <span className="font-normal">{item.label}</span>
+                </Link>
               </li>
             );
           })}
