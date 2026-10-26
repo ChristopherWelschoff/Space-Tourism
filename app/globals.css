@@ -88,13 +88,7 @@
   letter-spacing: 0;
 }
 
-/*
-  =========================================================
-  3. BASIS-STYLES
-  =========================================================
-  @layer base = Standard-Styles für HTML-Elemente.
-  @apply = Tailwind-Klassen in normalem CSS verwenden.
-*/
+
 @layer base {
   body {
     @apply bg-blue-900 font-body text-blue-300 antialiased;
