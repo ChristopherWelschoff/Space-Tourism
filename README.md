@@ -44,18 +44,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## What I learned
-
-- Building a design system with Tailwind v4 (`@theme`, custom `@utility` classes)
-- Loading Google Fonts with `next/font` and CSS variables
-- Server vs. Client Components in the Next.js App Router
-- Typing component props and data with TypeScript
-- Accessible navigation patterns (`aria-expanded`, `aria-current`, labelled icon buttons)
-
-## Author
-
-- Frontend Mentor – [@your-username](https://www.frontendmentor.io/profile/your-username)
-- GitHub – [@your-username](https://github.com/your-username)
 
 ## Deployment
 [Space Tourism](https://space-tourism-woad-one.vercel.app)
