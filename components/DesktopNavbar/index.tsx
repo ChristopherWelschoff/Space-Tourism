@@ -2,16 +2,13 @@ import { navItems } from "@/lib";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-type DekstopNavbarProps = {
-  setIsOpen: (value: boolean) => void;
-};
 
-export default function TabletNavbar({ setIsOpen }: DekstopNavbarProps) {
+export default function DesktopNavbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="md:flex ml-10 bg-white/5  grow justify-end  hidden  h-24 backdrop-blur-[80px]">
-      <ul className="flex px-10 gap-12 text-white uppercase text-preset-8">
+    <nav className="lg:ml-0 md:flex ml-10 bg-white/5  grow justify-end  hidden  h-24 backdrop-blur-[80px]">
+      <ul className="lg:px-16 flex px-10 gap-12 text-white uppercase text-preset-8">
         {navItems.map((item) => {
           const active = pathname === item.href;
           return (
@@ -21,7 +18,7 @@ export default function TabletNavbar({ setIsOpen }: DekstopNavbarProps) {
             >
               <Link
                 aria-current={active ? "page" : undefined}
-                onClick={() => setIsOpen(false)}
+           
                 className="flex gap-3 items-center"
                 href={item.href}
               >

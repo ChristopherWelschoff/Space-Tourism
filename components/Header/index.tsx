@@ -3,27 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import MobileNavBar from "../MobileNavBar";
-import TabletNavbar from "../TabletNavbar";
+import DesktopNavbar from "../DesktopNavbar";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <header>
-      <div className="md:p-0  flex justify-between items-center p-6">
+      <div className="lg:mt-10 md:p-0  flex justify-between items-center p-6">
         <Link
           aria-label="back to home"
           onClick={() => setIsOpen(false)}
           href={"/"}
         >
           <Image
-            className="w-10 h-10 md:ml-10 md:w-12 md:h-12"
+            className="lg:ml-16 md:ml-10 md:w-12 md:h-12 w-10 h-10 "
             alt=""
             src={"/assets/shared/logo.svg"}
             height={48}
             width={48}
           />
         </Link>
+        <div className="z-10 hidden -mr-4 ml-16 lg:block bg-white/25 h-px grow"></div>
 
         <button
           type="button"
@@ -39,7 +40,7 @@ export default function Header() {
             width={24}
           />
         </button>
-        <TabletNavbar setIsOpen={setIsOpen} />
+        <DesktopNavbar  />
       </div>
 
       <MobileNavBar isOpen={isOpen} setIsOpen={setIsOpen} />
