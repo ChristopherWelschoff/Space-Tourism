@@ -28,7 +28,7 @@ Users should be able to:
 - ✅ Design system (colors, fonts, text presets) in Tailwind theme
 - ✅ Responsive background images
 - ✅ Mobile navigation with glass effect, open/close state and active page indicator
-- ⬜ Tablet & desktop navigation
+- ✅  Tablet & desktop navigation
 - ⬜ Home page
 - ⬜ Destination page
 - ⬜ Crew page
