@@ -23,16 +23,17 @@ Users should be able to:
 - Mobile-first workflow
 - Semantic HTML and accessibility (ARIA)
 
-Progress
-✅ Design system (colors, fonts, text presets) in Tailwind theme
-✅ Responsive background images
-✅ Mobile navigation with glass effect, open/close state and active page indicator
-⬜ Tablet & desktop navigation
-⬜ Home page
-⬜ Destination page
-⬜ Crew page
-⬜ Technology page
-⬜ Data served via API route
+## Progress
+
+- ✅ Design system (colors, fonts, text presets) in Tailwind theme
+- ✅ Responsive background images
+- ✅ Mobile navigation with glass effect, open/close state and active page indicator
+- ⬜ Tablet & desktop navigation
+- ⬜ Home page
+- ⬜ Destination page
+- ⬜ Crew page
+- ⬜ Technology page
+- ⬜ Data served via API route
 
 
 ## Deployment
