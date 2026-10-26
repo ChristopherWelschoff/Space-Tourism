@@ -35,15 +35,6 @@ Users should be able to:
 - [ ] Technology page
 - [ ] Data served via API route
 
-## Getting started
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
 
 ## Deployment
 [Space Tourism](https://space-tourism-woad-one.vercel.app)
