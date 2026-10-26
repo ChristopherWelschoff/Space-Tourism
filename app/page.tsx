@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main>
-      <h1 className="text-preset-1 text-white">SPACE</h1>
+      <div className="lg:bg-[url(/assets/home/background-home-desktop.jpg)] md:bg-[url(/assets/home/background-home-tablet.jpg)] bg-[url(/assets/home/background-home-mobile.jpg)] fixed inset-0 bg-cover bg-center -z-10"></div>
     </main>
   );
 }

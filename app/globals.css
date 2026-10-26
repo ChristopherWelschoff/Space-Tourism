@@ -1,14 +1,5 @@
 @import "tailwindcss";
 
-/*
-  =========================================================
-  1. DESIGN TOKENS (aus dem Figma Design System)
-  =========================================================
-  Alles in "theme" erzeugt automatisch Tailwind-Klassen:
-  --color-blue-900  ->  bg-blue-900, text-blue-900, border-blue-900 ...
-  --font-heading  ->  font-heading
-*/
-
 @theme {
   /* --- Farben --- */
   --color-blue-900: #0b0d17; /* Hintergrund */
@@ -16,38 +7,14 @@
   --color-white: #ffffff;
 }
 
-/*
-  "inline" ist hier wichtig: Die Schrift-Variablen kommen von next/font
-  (siehe layout.tsx) und werden erst zur Laufzeit gesetzt. Mit "inline"
-  setzt Tailwind die Referenz direkt in die Klasse ein, statt eine
-  eigene Variable mit demselben Namen anzulegen.
-*/
 @theme inline {
   /* --- Schriften --- */
   --font-heading: var(--font-bellefair); /* Bellefair: große Überschriften */
-  --font-nav: var(--font-barlow-condensed); /* Barlow Condensed: Navigation, Labels */
+  --font-nav: var(
+    --font-barlow-condensed
+  ); /* Barlow Condensed: Navigation, Labels */
   --font-body: var(--font-barlow); /* Barlow: Fließtext */
 }
-
-/*
-  Spacing: Nichts zu tun!
-  Das Design nutzt 4px-Schritte (128, 96, 80 ... 4px) –
-  genau wie Tailwind standardmäßig (p-1 = 4px, p-32 = 128px).
-*/
-
-/*
-  =========================================================
-  2. TEXT-PRESETS (Text Preset 1–9 aus dem Style Guide)
-  =========================================================
-  Mit @utility baust du eigene Tailwind-Klassen.
-  Nutzung im JSX: <h1 className="text-preset-1">SPACE</h1>
-  Vorteil: Varianten funktionieren auch, z. B. md:text-preset-2
-
-  Größen in rem (1rem = 16px), damit die Schrift mit den
-  Browser-Einstellungen der Nutzer:innen mitskaliert (Accessibility).
-
-  HINWEIS: Die Zeilenhöhen bitte mit Figma abgleichen!
-*/
 
 /* Preset 1 – Bellefair 144px */
 @utility text-preset-1 {
