@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { NavItem } from "@/types/NavItem";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const navItems: NavItem[] = [
   {
@@ -13,26 +14,32 @@ const navItems: NavItem[] = [
   {
     index: "01",
     label: "Destination",
-    href: "/",
+    href: "/1",
   },
   {
     index: "02",
     label: "Crew",
-    href: "/",
+    href: "/2",
   },
   {
     index: "03",
     label: "Technology",
-    href: "/",
+    href: "/3",
   },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const pathname = usePathname();
+
   return (
     <header>
       <div className="flex justify-between items-center p-6">
-        <Link aria-label="back to home" onClick={() => setIsOpen(false)} href={"/"}>
+        <Link
+          aria-label="back to home"
+          onClick={() => setIsOpen(false)}
+          href={"/"}
+        >
           <Image
             alt=""
             src={"/assets/shared/logo.svg"}
@@ -72,11 +79,16 @@ export default function Header() {
           </button>
           <ul className="flex flex-col gap-8 text-white text-preset-8 uppercase">
             {navItems.map((item) => {
+              const active = pathname === item.href;
               return (
-                <li key={item.index} className="font-bold">
+                <li
+                  key={item.index}
+                  className={`font-bold ${active ? "border-r-2" : ""}`}
+                >
                   <Link
+                    aria-current={active ? "page" : undefined}
                     onClick={() => setIsOpen(false)}
-                    className="flex gap-3 items-center "
+                    className="flex gap-3 items-center  "
                     href={item.href}
                   >
                     {item.index}
