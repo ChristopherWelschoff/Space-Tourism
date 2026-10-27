@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${bellefair.variable} ${barlow.variable} ${barlowCondensed.variable}`}
     >
-      <body>
+      <body className="flex flex-col min-h-dvh">
         <Header />
         {children}
       </body>
